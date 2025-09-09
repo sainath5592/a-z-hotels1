@@ -1,3 +1,4 @@
+
 # 🏨 aZ_Hotels
 
 aZ_Hotels is a **full-stack hotel listing and booking web application** built with **Node.js, Express.js, MongoDB, and EJS**.  
@@ -39,3 +40,47 @@ The project follows the **MVC (Model–View–Controller)** architecture to ensu
 
 ## 📂 Project Structure
 
+aZ_Hotels-main/
+│── app.js # Main entry point
+│── cloudConfig.js # Cloud storage configuration (if using)
+│── middelware.js # Custom middleware
+│── shema.js # Joi/validation schemas
+│── utils/ # Utility functions (Error handling, async wrapper)
+│── controllers/ # Controllers for business logic
+│── models/ # Mongoose models
+│── routes/ # Express routes
+│── views/ # EJS templates
+│── public/ # Static files (CSS, JS)
+│── uploads/ # Uploaded hotel images
+│── package.json
+│── .gitignore
+└── README.md
+
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone git@github.com:sainath5592/a-z-hotels1.git
+   cd a-z-hotels1
+Install dependencies
+
+npm install
+Configure environment variables
+Create a .env file in the project root with the following keys:
+
+PORT=3000
+MONGO_URI=mongodb://localhost:27017/hotels
+SESSION_SECRET=yourSecretKey
+CLOUDINARY_KEY=yourKey        # if using cloud storage
+CLOUDINARY_SECRET=yourSecret
+Run the application
+
+npm start
+Open the app at http://localhost:3000
+
+
+👨‍💻 Author
+Sainath – GitHub
