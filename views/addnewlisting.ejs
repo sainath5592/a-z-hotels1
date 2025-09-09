@@ -1,0 +1,90 @@
+<% layout("/layout/boilerplate") %>
+<body>
+  <div class="container my-5" style="max-width: 600px;">
+    <div class="card shadow-sm p-4">
+      <h2 class="mb-4 text-center">Add a New Listing</h2>
+      
+      <!-- Form -->
+      <form action="/listings/add/new" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
+     
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" id="title" name="title" class="form-control" required>
+          <div class="invalid-feedback">Please enter a title.</div>
+          <div class="valid-feedback">This Looks Good</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
+          <div class="invalid-feedback">Please enter a description.</div>
+          <div class="valid-feedback">Oh Great Description</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="price" class="form-label">Price (per night $)</label>
+          <input type="text" id="price" name="price" class="form-control" required>
+          <div class="invalid-feedback">Please enter a valid price.</div>
+          <div class="valid-feedback">Affordoble price</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input type="text" id="location" name="location" class="form-control" required>
+          <div class="invalid-feedback">Please enter a location.</div>
+          <div class="valid-feedback">Amazing Location</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="country" class="form-label">Country</label>
+          <input type="text" id="country" name="country" class="form-control" required>
+          <div class="invalid-feedback">Please enter a country.</div>
+          <div class="valid-feedback">Very Well known country</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image </label>
+          <input type="file" id="image" name="image" class="form-control"  required>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+          <a href="/listings" class="btn btn-secondary">Cancel</a>
+          <button type="submit" class="btn btn-success">Add Listing</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h2 {
+      font-weight: 600;
+    }
+    .card {
+      border-radius: 10px;
+    }
+  </style>
+
+  <!-- Bootstrap Validation Script -->
+  <script>
+    // Bootstrap form validation
+    (() => {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
+</body>
+</html>
